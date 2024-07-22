@@ -19,10 +19,11 @@ class frac {
    }
 
 public:   
-frac(int n=0, int d=1) {  
+frac(int n=0, int d=1) : num(n), den(d) {  
        // configura operador == 
-       num = n;
-       den = d;
+       int div = mdc(num,den);
+       num /= div;
+       den /= div;
    }
    // Operadores 
    bool operator>(frac& fracao) {
